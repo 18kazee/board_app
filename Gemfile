@@ -35,9 +35,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.11.2'
+gem 'sorcery', '0.14.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
   gem 'faker'
   gem 'factory_bot_rails'
   # 変更しないでください
