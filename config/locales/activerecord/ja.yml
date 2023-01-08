@@ -1,7 +1,12 @@
 ja:
+  time:
+    formats:
+      default: '%Y/%m/%d %H:%M'
+      short: '%m/%d %H:%M'
   activerecord:
     models:
       user: 'ユーザー'
+      board: '掲示板'
     attributes:
       user:
         email: 'メールアドレス'
@@ -9,4 +14,6 @@ ja:
         password_confirmation: 'パスワード確認'
         first_name: '名'
         last_name: '姓'
-        
+      board: 
+        title: 'タイトル'
+        body: '本文'
