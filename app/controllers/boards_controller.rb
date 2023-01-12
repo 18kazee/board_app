@@ -7,9 +7,17 @@ class BoardsController < ApplicationController
   end
 
   def new
+    @board = Board.new
   end
 
   def create
+    @board = Board.new(board_params)
+    if @board.save
+      redirect_to boards_path, success: t('defaults.message.created', item: Board.model_name.human)
+    else
+      flash.now[:danger] = t('defaults.message.not_created', item: Board.model_name.human)
+      render :new
+    end
   end
 
   def edit
@@ -20,4 +28,11 @@ class BoardsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def board_params
+    params.require(:board).permit(:title, :body).merge(user_id: current_user.id)
+  end
+
 end
