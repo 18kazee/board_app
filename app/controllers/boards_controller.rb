@@ -11,7 +11,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.build(board_params)
     if @board.save
       redirect_to boards_path, success: t('defaults.message.created', item: Board.model_name.human)
     else
@@ -32,7 +32,7 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :body).merge(user_id: current_user.id)
+    params.require(:board).permit(:title, :body)
   end
 
 end
