@@ -1,0 +1,18 @@
+<tr id="comment-<%= comment.id %>">
+  <td style="width: 60px">
+    <%= image_tag 'sample.jpg', class: 'rounded-circle', size: "50x50" %>
+  </td>
+  <td>
+    <h3 class="small"><%= comment.user.decorate.full_name %></h3>
+    <div id="js-comment-<%= comment.id %>">
+      <%= simple_format(comment.body) %>
+    </div>
+  </td>
+  <% if current_user == comment.user %>
+    <td class="action">
+      <ul class="list-inline justify-content-center" style="float: right;">
+        <%= render 'boards/clud_menus' %>
+      </ul>
+    </td>
+  <% end %>
+</tr>
