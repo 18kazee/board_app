@@ -8,7 +8,7 @@
       <%= simple_format(comment.body) %>
     </div>
   </td>
-  <% if current_user == comment.user %>
+  <% if current_user.own?(comment) %>
     <td class="action">
       <ul class="list-inline justify-content-center" style="float: right;">
         <%= render 'boards/clud_menus' %>

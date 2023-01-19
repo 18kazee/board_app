@@ -10,4 +10,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :first_name, length: { maximum: 255 }, presence: true
   validates :last_name, length: { maximum: 255 }, presence: true
+
+  def own?(object)
+    self.id == object.user_id
+  end
+
 end
