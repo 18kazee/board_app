@@ -6,7 +6,7 @@
         <h4 class="card-title">
           <%= link_to board.title, board_path(board) %>
         </h4>
-        <%= render 'boards/clud_menus' %>
+        <%= render 'crud_menus', {board: board} %>
         <ul class="list-inline">
           <li class="list-inline-item">
             <%= icon 'far', 'user' %>

@@ -7,14 +7,14 @@
         <div class="card-body">
           <div class='row'>
             <div class='col-md-3'>
-              <%= image_tag @board.board_image_url, class: 'card-img-top img-fluid', size: '300x200' %>
+              <%= image_tag @board.board_image.url, class: 'card-img-top img-fluid', size: '300x200' %>
             </div>
             <div class='col-md-9'>
               <h3 class="d-inline"><%= @board.title %></h3>
-              <%= render 'boards/clud_menus' %>
-              <ul class="list-inline >
+              <%= render 'crud_menus', {board: @board} %>
+              <ul class="list-inline">
                 <li class="list-inline-item">by <%= @board.user.decorate.full_name %></li>
-                <li class="list-inline-item"><%= l @board.created_at, format: :long %></li>
+                <li class="list-inline-item"><%= l @board.created_at, format: :long  %></li>
               </ul>
             </div>
           </div>
@@ -25,15 +25,8 @@
   </div>
 
   <!-- コメントフォーム -->
-  <%= render 'comments/form', { board: @board, comment: @comment } %> 
-
+  <%= render 'comments/form', { board: @board, comment: @comment } %>
 
   <!-- コメントエリア -->
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2">
-      <table id="js-table-comment" class="table">
-        <%= render @comments %>
-      </table>
-    </div>
-  </div>
+  <%= render 'comments/comments', { comments: @comments } %>
 </div>

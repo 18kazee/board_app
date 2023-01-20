@@ -11,7 +11,7 @@
   <% if current_user.own?(comment) %>
     <td class="action">
       <ul class="list-inline justify-content-center" style="float: right;">
-        <%= render 'boards/clud_menus' %>
+        <%= render 'boards/crud_menus', {board: @board}%>
       </ul>
     </td>
   <% end %>
