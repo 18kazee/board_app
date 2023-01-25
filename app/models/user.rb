@@ -2,8 +2,9 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :bookmark_boards, through: :bookmarks, source: :board
   has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_boards, through: :bookmarks, source: :board
+  
 
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
@@ -22,7 +23,7 @@ class User < ApplicationRecord
     bookmark_boards << board
   end
 
-  def unbookmark
+  def unbookmark(board)
     bookmark_boards.delete(board)
   end
 
