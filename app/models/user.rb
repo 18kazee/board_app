@@ -2,7 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :bookmarks_boards, through: :bookmarks, source: :board
+  has_many :bookmark_boards, through: :bookmarks, source: :board
   has_many :bookmarks, dependent: :destroy
 
 
@@ -18,4 +18,15 @@ class User < ApplicationRecord
     self.id == object.user_id
   end
 
+  def bookmark(board)
+    bookmark_boards << board
+  end
+
+  def unbookmark
+    bookmark_boards.delete(board)
+  end
+
+  def bookmark?(board)
+    bookmark_boards.include?(board)
+  end
 end
