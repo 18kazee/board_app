@@ -15,6 +15,10 @@ class BoardsController < ApplicationController
     @board = Board.new
   end
 
+  def bookmarks
+    @bookmark_boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc)
+  end
+
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
