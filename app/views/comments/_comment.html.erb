@@ -11,7 +11,19 @@
   <% if current_user.own?(comment) %>
     <td class="action">
       <ul class="list-inline justify-content-center" style="float: right;">
-        <%= render 'boards/crud_menus', {board: @board}%>
+        <li class="list-inline-item">
+          <a href="#">
+            <%= icon 'fa', 'pen' %>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <%= link_to comment_path, 
+                      method: :delete,
+                      class: 'js-delete-comment-button',
+                      remote: true do %>
+            <%= icon 'fa', 'trash' %>
+          <% end %>
+        </li>
       </ul>
     </td>
   <% end %>
