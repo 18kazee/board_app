@@ -20,6 +20,7 @@
           <%= link_to comment_path(comment), 
                       method: :delete,
                       class: 'js-delete-comment-button',
+                      data: { confirm: t('defaults.message.delete_confirm') },
                       remote: true do %>
             <%= icon 'fa', 'trash' %>
           <% end %>
