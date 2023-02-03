@@ -17,7 +17,7 @@
           </a>
         </li>
         <li class="list-inline-item">
-          <%= link_to comment_path, 
+          <%= link_to comment_path(comment), 
                       method: :delete,
                       class: 'js-delete-comment-button',
                       remote: true do %>
