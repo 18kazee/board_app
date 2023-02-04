@@ -41,6 +41,8 @@ gem 'draper'
 gem 'faker'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari', '~> 0.17.0'
+gem 'bootstrap4-kaminari-views'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
