@@ -3,7 +3,9 @@ ja:
     login: 'ログイン'
     logout: 'ログアウト'
     register: '登録'
+    update: '更新'
     post: '投稿'
+    edit: '編集'
     search_word: '検索ワード'
     message:
       require_login: 'ログインしてください'
@@ -51,3 +53,7 @@ ja:
     destroy:
       success: "ブックマークを外しました"
   profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
