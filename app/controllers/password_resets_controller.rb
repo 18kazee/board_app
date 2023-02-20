@@ -23,7 +23,7 @@ class PasswordResetsController < ApplicationController
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
 
-    if @user.brank?
+    if @user.blank?
       not_authenticated
       return
     end

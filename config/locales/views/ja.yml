@@ -57,9 +57,14 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
-  password_reset:
-      create: 
-	success: 'パスワードリセットの手順を送信しました'
-      updaate:
-        success: 'パスワードを更新しました'
-	fail: 'パスワード更新に失敗しました'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    create: 
+      success: 'パスワードリセットの手順を送信しました'
+    update:
+      success: 'パスワードを更新しました'
+      fail: 'パスワード更新に失敗しました'
+    edit:
+      title: 'パスワードリセット'
