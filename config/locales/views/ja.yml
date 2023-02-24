@@ -6,6 +6,7 @@ ja:
     update: '更新'
     post: '投稿'
     edit: '編集'
+    password_reset: 'パスワードリセット'
     search_word: '検索ワード'
     message:
       require_login: 'ログインしてください'
@@ -64,7 +65,7 @@ ja:
     create: 
       success: 'パスワードリセットの手順を送信しました'
     update:
-      success: 'パスワードを更新しました'
+      success: 'パスワードを変更しました'
       fail: 'パスワード更新に失敗しました'
     edit:
       title: 'パスワードリセット'
