@@ -10,6 +10,7 @@ ja:
     search_word: '検索ワード'
     message:
       require_login: 'ログインしてください'
+      not_authorized: '許可されていません'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
       update: "%{item}を更新しました"
@@ -69,3 +70,15 @@ ja:
       fail: 'パスワード更新に失敗しました'
     edit:
       title: 'パスワードリセット'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        title: 'ログインしました'
+        fall: 'ログインに失敗しました'
+      destroy: 
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
