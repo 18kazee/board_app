@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-	enum role: { general: 0, admin: 1 }
   has_many :boards, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
@@ -16,6 +15,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :first_name, length: { maximum: 255 }, presence: true
   validates :last_name, length: { maximum: 255 }, presence: true
+
+	enum role: { general: 0, admin: 1 }
 
   def own?(object)
     self.id == object.user_id

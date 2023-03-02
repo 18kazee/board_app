@@ -10,7 +10,7 @@ ja:
     search_word: '検索ワード'
     message:
       require_login: 'ログインしてください'
-      not_authorized: '許可されていません'
+      not_authorized: '権限がありません'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
       update: "%{item}を更新しました"
@@ -75,8 +75,8 @@ ja:
       new:
         title: 'ログイン'
       create:
-        title: 'ログインしました'
-        fall: 'ログインに失敗しました'
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
       destroy: 
         success: 'ログアウトしました'
     dashboards:
