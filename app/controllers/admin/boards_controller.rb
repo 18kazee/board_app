@@ -1,5 +1,5 @@
 class Admin::BoardsController < Admin::BaseController
-	before_action :set_board, only: %i[:show, edit, update, destroy]
+	before_action :set_board, only: %i[show edit update destroy]
 
 	def index
 		@q = Board.ransack(params[:q])
@@ -11,8 +11,8 @@ class Admin::BoardsController < Admin::BaseController
 	def edit; end
 
 	def update
-		if @board.update
-			redirect_to admin_boards_path, success: t('defaults.message.update', item: Board.model_name.human)
+		if @board.update(board_params)
+			redirect_to admin_boards_path(@board), success: t('defaults.message.update', item: Board.model_name.human)
 		else
 			flash.now[:danger] = t('defaults.message.not_update', item: Board.model_name.human)
 			render :edit

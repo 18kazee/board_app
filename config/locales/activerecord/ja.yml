@@ -26,6 +26,7 @@ ja:
       board: 
         title: 'タイトル'
         body: '本文'
+        user_name: '作成者'
         board_image: 'サムネイル'
       comment:
         body: 'コメント'
