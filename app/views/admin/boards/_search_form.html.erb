@@ -4,6 +4,9 @@
       <div class="col-auto">
         <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
       </div>
+			<%= f.date_field :created_at_gteq %>
+			<span>~</span>
+			<%= f.date_field :created_at_lteq_end_of_day %>
       <div class="col-auto">
         <%= f.submit class: 'btn btn-primary' %>
       </div>
