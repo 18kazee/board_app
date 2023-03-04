@@ -16,6 +16,7 @@ ja:
       bookmark: 'ブックマーク'
     attributes:
       user:
+        id: 'ID'
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
@@ -23,6 +24,8 @@ ja:
         last_name: '姓'
         full_name: '氏名'
         avatar: 'アバター'
+        role: '権限'
+        created_at: '作成日時'
       board: 
         title: 'タイトル'
         body: '本文'
